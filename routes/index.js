@@ -9,11 +9,19 @@ router.get('/', function (req, res, next) {
 
 /* GET home page. */
 router.get('/home', function (req, res, next) {
-  res.render('homepage');
+  if(req.session.user == null){
+    res.redirect('/')
+  } else {
+    res.render('homepage');
+  }
 });
 
-router.post('/notrain', function (req, res, next) {
-  res.render('noTrain');
+router.get('/notrain', function (req, res, next) {
+  if(req.session.user == null){
+    res.redirect('/')
+  } else {
+    res.render('noTrain');
+  }
 });
 
 router.post('/journey-list', async function (req, res, next) {
@@ -39,11 +47,19 @@ router.post('/journey-list', async function (req, res, next) {
 });
 
 router.get('/basket', function (req, res, next) {
-  res.render('basket');
+  if(req.session.user == null){
+    res.redirect('/')
+  } else {
+    res.render('basket');
+  }
 });
 
 router.get('/lastTrips', function (req, res, next) {
-  res.render('lastTrip');
+  if(req.session.user == null){
+    res.redirect('/')
+  } else {
+    res.render('lastTrip');
+  }
 });
 
 module.exports = router;
