@@ -4,9 +4,15 @@ let journeyModel = require('../models/journey');
 
 
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+/* GET login page. */
+router.get('/', function (req, res, next) {
+  res.render('index');
 });
+
+/* GET home page. */
+router.get('/home', function (req, res, next) {
+  res.render('homepage');
+});
+
 
 module.exports = router;
