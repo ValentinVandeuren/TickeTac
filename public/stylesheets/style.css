@@ -1,8 +1,49 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: rgb(53, 132, 182);
+  background: linear-gradient(0deg, rgba(53, 132, 182, 1) 0%, rgba(195, 221, 233, 1) 100%);
+
 }
 
 a {
-  color: #00B7FF;
+  color: #000000;
+  text-decoration: none;
+}
+
+.a_navbar {
+  font-weight: 450;
+}
+
+.a_navbar:hover {
+  color: #FF8080;
+}
+
+.connection_navbar {
+  color: #c0392b;
+  margin-right: 20px;
+}
+
+nav {
+  width: 100vw;
+  height: 55px;
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left_side_content,
+.right_side {
+  display: flex;
+  gap: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  align-items: center;
+}
+
+img {
+  height: 25px;
 }
