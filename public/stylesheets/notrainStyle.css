@@ -1,0 +1,25 @@
+.noTrain_principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding-top: 30px;
+}
+
+.button_notrain {
+    text-align: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: white;
+    background-color: #DA3849;
+    border: none;
+    border-radius: 3px;
+}
+
+.h3 {
+    font-weight: 500;
+    font-size: 30px;
+}
