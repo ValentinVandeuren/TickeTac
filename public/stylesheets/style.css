@@ -12,6 +12,14 @@ a {
   text-decoration: none;
 }
 
+i{
+  margin-left: 20px;
+}
+
+i:hover {
+  color: #FF8080;
+}
+
 .a_navbar {
   font-weight: 450;
 }
