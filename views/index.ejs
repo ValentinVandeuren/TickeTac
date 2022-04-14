@@ -1,16 +1,35 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Bienvenue</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link rel='stylesheet' href='/stylesheets/loginpageStyle.css'/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <%- include('navbar'); %>
 
-<head>
-  <title>Bienvenue</title>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
-    rel="stylesheet">
-</head>
-
-<body>
-  <%- include('navbar'); %>
-</body>
-
+    <div class="contentPage">
+      <div class="contentLogin">
+        <div class="contentSignIn">
+          <h3 class="title">Sign-in:</h3>
+          <form class="signInForm" action="">
+            <input type="text" placeholder="Email">
+            <input type="text" placeholder="Password">
+            <button type="submit">Confirm</button>
+          </form>
+        </div>
+        <div class="contentSignUp">
+          <h3 class="title">Sign-up:</h3>
+          <form class="signUpForm" action="">
+            <input type="text" placeholder="Name">
+            <input type="text" placeholder="FirstName">
+            <input type="text" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <button type="submit">Confirm</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
