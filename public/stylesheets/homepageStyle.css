@@ -1,4 +1,73 @@
-.principal{
-    height: 95vh;
-    background-color: red;
+.principal {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input_home {
+    height: 25px;
+    width: 175px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 10px;
+    margin-right: 10px;
+    outline: none;
+}
+
+.image_home {
+    height: 300px;
+    width: 300px;
+    margin-top: 50px;
+}
+
+.button_home {
+    color: white;
+    background-color: #da3849;
+    border: 1px solid white;
+    width: 40px;
+    padding: 0;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.button_home:hover {
+    color: #da3849;
+    background-color: white;
+}
+
+.journey_form {
+    align-items: center;
+}
+
+.content_principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#h4 {
+    text-align: start;
+    width: 100%;
+    color: white;
+    margin-top: 0;
+}
+
+.input_date {
+    height: 28px;
+}
+
+input[type=date] {
+    font-family: arial, sans-serif;
+    font-size: 13px;
+    color: rgb(133, 133, 133);
+    padding-right: 10px;
+}
+
+.background_input {
+    background: #da3849;
+    align-items: center;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.164);
+    padding: 30px;
+    border-radius: 50px;
 }

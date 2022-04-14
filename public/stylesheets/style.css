@@ -5,7 +5,6 @@ body {
   height: 100vh;
   background: rgb(53, 132, 182);
   background: linear-gradient(0deg, rgba(53, 132, 182, 1) 0%, rgba(195, 221, 233, 1) 100%);
-
 }
 
 a {
