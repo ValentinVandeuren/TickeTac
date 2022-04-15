@@ -61,7 +61,7 @@ router.get('/basket', function (req, res, next) {
       }
     }
 
-    if (status == false) {
+    if (status == false && req.query.time) {
       req.session.basketList.push({
         departure: req.query.departure,
         arrival: req.query.arrival,

@@ -10,6 +10,7 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel='stylesheet' href='/stylesheets/basketStyle.css' />
+    <link rel='stylesheet' href='/stylesheets/notrainStyle.css'>
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
         rel="stylesheet">
@@ -21,6 +22,12 @@
     <%- include('navbar'); %>
     <div class="container">
         <div class="row">
+            <% if(basketList.length == 0){ %>
+                <div class="noTrain_principal">
+                    <h3 class="h3">Oops ! Basket is empty...</h3>
+                    <button onclick="window.location.href='/home';" class="button_basket">Home</button>
+                </div>
+            <% } else { %>
             <h4 class="title_basket">My tickets</h4>
             <table class="table table-light table-borderless">
                 <thead>
@@ -64,6 +71,7 @@
                     </tr>
                 </tbody>
             </table>
+            <% } %>
         </div>
     </div>
 </body>
