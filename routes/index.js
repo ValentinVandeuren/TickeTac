@@ -16,14 +16,6 @@ router.get('/home', function (req, res, next) {
   }
 });
 
-router.get('/notrain', function (req, res, next) {
-  if(req.session.user == null){
-    res.redirect('/')
-  } else {
-    res.render('noTrain');
-  }
-});
-
 router.post('/journey-list', async function (req, res, next) {
 
   var destinationForm = req.body.destination;
