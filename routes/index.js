@@ -33,17 +33,19 @@ router.post('/journey-list', async function (req, res, next) {
     departure: destinationForm
   });
   var newDate = new Date(dateForm);
+  let dayOfDate = newDate.getDate();
+  let MonthOfDate = newDate.getMonth();
+  let dateMonthDay = `${dayOfDate} / ${MonthOfDate +1}`;
+  let listOfJourney = []
 
 
   for (var i = 0; i < journeyList.length; i++) {
     if (journeyList[i].arrival == arrivalForm && journeyList[i].date.getDate() == newDate.getDate()) {
-      res.render('journeyList');
-      break;
-    } else {
-      res.redirect('/notrain')
-      break;
+      listOfJourney.push(journeyList[i])
     }
   }
+
+  res.render('journeyList', { listOfJourney, dateMonthDay })
 });
 
 router.get('/basket', function (req, res, next) {
