@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 let journeyModel = require('../models/journey');
+let usersModel = require('../models/users');
 
 /* GET login page. */
 router.get('/', function (req, res, next) {
@@ -9,7 +10,7 @@ router.get('/', function (req, res, next) {
 
 /* GET home page. */
 router.get('/home', function (req, res, next) {
-  if(req.session.user == null){
+  if (req.session.user == null) {
     res.redirect('/')
   } else {
     res.render('homepage');
@@ -39,14 +40,18 @@ router.post('/journey-list', async function (req, res, next) {
     }
   }
 
-  res.render('journeyList', { listOfJourney, dateMonthDay, fullDate })
+  res.render('journeyList', {
+    listOfJourney,
+    dateMonthDay,
+    fullDate
+  })
 });
 
 router.get('/basket', function (req, res, next) {
-  if(req.session.user == null){
+  if (req.session.user == null) {
     res.redirect('/')
   } else {
-    if(!req.session.basketList) req.session.basketList = [];
+    if (!req.session.basketList) req.session.basketList = [];
     var status = false;
 
     for (var i = 0; i < req.session.basketList.length; i++) {
@@ -65,16 +70,47 @@ router.get('/basket', function (req, res, next) {
         price: req.query.price
       });
     }
-    res.render('basket', { basketList: req.session.basketList });
+    res.render('basket', {
+      basketList: req.session.basketList
+    });
   }
 });
 
-router.get('/lastTrips', function (req, res, next) {
-  if(req.session.user == null){
+router.get('/lastTrips', async function (req, res, next) {
+  if (req.session.user == null) {
     res.redirect('/')
   } else {
-    res.render('lastTrip');
+    var user = await usersModel.findById(req.session.user.id)
+    var lastTripOfUser = user.lastTrips;
+    console.log(lastTripOfUser);
+
+    res.render('lastTrip', {lastTripOfUser});
   }
 });
+
+
+router.get('/success', async function (req, res, next) {
+  if (req.session.user == null) {
+    res.redirect('/')
+  } else {
+
+    var user = await usersModel.findById(req.session.user.id)
+
+    for (var i = 0; i < req.session.basketList.length; i++) {
+      user.lastTrips.push({
+        departure: req.session.basketList[i].departure,
+        arrival: req.session.basketList[i].arrival,
+        date: req.session.basketList[i].date,
+        departureTime: req.session.basketList[i].departureTime,
+        price: req.session.basketList[i].price
+      })
+      await user.save();
+    }
+    req.session.basketList = [];
+    
+    res.render('success');
+  }
+}
+);
 
 module.exports = router;

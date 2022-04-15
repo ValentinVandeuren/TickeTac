@@ -41,7 +41,7 @@
                         <th scope="row"><%= i + 1 %></th>
                         <td><%= basketList[i].departure %>/<%= basketList[i].arrival %></td>
                         <td><%= basketList[i].date %></td>
-                        <td><%= basketList[i].departureTime %>pm</td>
+                        <td><%= basketList[i].departureTime %></td>
                         <td><%= basketList[i].price %>€</td>
                     </tr>
                     <%
@@ -60,7 +60,7 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td><button class="button_basket">Confirm</button></td>
+                        <td><button onclick="window.location.href='/success';" class="button_basket">Confirm</button></td>
                     </tr>
                 </tbody>
             </table>

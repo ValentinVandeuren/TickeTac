@@ -27,23 +27,21 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <% for(var i = 0 ; i < lastTripOfUser.length ; i++){
+                                %>
                         <tr class="text-center">
-                            <td>02/08/2019</td>
-                            <td>Paris / Lille</td>
-                            <td>15:00</td>
-                            <td>100€</td>
+                            <td><%= lastTripOfUser[i].date %></td>
+                            <td><%= lastTripOfUser[i].departure %> / <%= lastTripOfUser[i].arrival %></td>
+                            <td><%= lastTripOfUser[i].departureTime %></td>
+                            <td><%= lastTripOfUser[i].price %>€</td>
                         </tr>
-                        <tr class="text-center">
-                            <td>02/08/2018</td>
-                            <td>Marseille / Paris</td>
-                            <td>15:00</td>
-                            <td>100€</td>
-                        </tr>
+                        <%
+                    }%>
                         <tr class="text-center table table-borderless display-none">
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td><button class="button_basket">Home</button></td>
+                            <td><button onclick="window.location.href='/home';" class="button_basket">Home</button></td>
                         </tr>
                     </tbody>
                 </table>
