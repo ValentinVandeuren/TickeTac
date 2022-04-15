@@ -29,7 +29,7 @@
                     <p class="textDeparture">Train departure at: <%= listOfJourney[i].departureTime %></p>
                     <div class="endCard">
                         <h4><%= listOfJourney[i].price %>€</h4>
-                        <button>OK</button>
+                        <a href="/basket?departure=<%= listOfJourney[i].departure %>&arrival=<%= listOfJourney[i].arrival %>&date=<%= fullDate %>&time=<%= listOfJourney[i].departureTime %>&price=<%= listOfJourney[i].price %>"><button>OK</button></a>
                     </div>
                 </div>
                 <% } %>
