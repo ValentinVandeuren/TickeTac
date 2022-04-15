@@ -1,15 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel='stylesheet' href='/stylesheets/style.css' />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/9518c0153b.js" crossorigin="anonymous"></script>
-        <title>TickeTac - Basket</title>
-    </head>
-    <body>
-        <%- include('navbar'); %>
-    </body>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/basketStyle.css' />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9518c0153b.js" crossorigin="anonymous"></script>
+    <title>TickeTac - Basket</title>
+</head>
+
+<body>
+    <%- include('navbar'); %>
+    <div class="container">
+        <div class="row">
+            <h4 class="title_basket">My tickets</h4>
+            <table class="table table-light table-borderless">
+                <thead>
+                    <tr class="text-center">
+                        <th scope="col">N°</th>
+                        <th scope="col">Journey</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Departure Time</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="text-center">
+                        <th scope="row">1</th>
+                        <td>Paris / Lille</td>
+                        <td>02/08/2019</td>
+                        <td>15:00</td>
+                        <td>100€</td>
+                    </tr>
+                    <tr class="text-center">
+                        <th scope="row">2</th>
+                        <td>Marseille / Paris</td>
+                        <td>02/08/2018</td>
+                        <td>15:00</td>
+                        <td>100€</td>
+                    </tr>
+                    <tr class="table-danger text-center">
+                        <th scope="row">Total</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>200€</td>
+                    </tr>
+                    <tr class="text-center table table-borderless display-none">
+                        <th></th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><button class="button_basket">Confirm</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
 </html>

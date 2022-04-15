@@ -1,0 +1,25 @@
+.button_basket {
+    height: 30px;
+    padding: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #FFF;
+    background-color: #DA3849;
+    border: none;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+.button_basket:hover{
+    background-color: #FF8080;
+    cursor: pointer;
+}
+
+.title_basket {
+    color: white;
+}
+
+.container{
+    margin-top: 50px;
+    width: 80vw;
+}
