@@ -33,26 +33,27 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <%
+                    let total = 0;
+                    for(let i=0; i<basketList.length; i++){
+                    %>
                     <tr class="text-center">
-                        <th scope="row">1</th>
-                        <td>Paris / Lille</td>
-                        <td>02/08/2019</td>
-                        <td>15:00</td>
-                        <td>100€</td>
+                        <th scope="row"><%= i + 1 %></th>
+                        <td><%= basketList[i].departure %>/<%= basketList[i].arrival %></td>
+                        <td><%= basketList[i].date %></td>
+                        <td><%= basketList[i].departureTime %>pm</td>
+                        <td><%= basketList[i].price %>€</td>
                     </tr>
-                    <tr class="text-center">
-                        <th scope="row">2</th>
-                        <td>Marseille / Paris</td>
-                        <td>02/08/2018</td>
-                        <td>15:00</td>
-                        <td>100€</td>
-                    </tr>
+                    <%
+                    total += +basketList[i].price;
+                    }
+                    %>
                     <tr class="table-danger text-center">
                         <th scope="row">Total</th>
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>200€</td>
+                        <td><%= total %>€</td>
                     </tr>
                     <tr class="text-center table table-borderless display-none">
                         <th></th>
